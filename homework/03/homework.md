@@ -5,17 +5,21 @@ The goal of this homework is to create a simple training pipeline, use mlflow to
 We'll use [the same NYC taxi dataset](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page), the **Yellow** taxi data for March, 2023. 
 
 ## Question 1. Select the Tool
-
+ 
 You can use the same tool you used when completing the module,
 or choose a different one for your homework.
 
 What's the name of the orchestrator you chose? 
 
+Prefect
+![alt text](<screenshots/prefect log.png>)
 
 ## Question 2. Version
 
 What's the version of the orchestrator? 
 
+Prefect version: 3.4.20
+![alt text](screenshots/mod03-q2-screen.png)
 
 ## Question 3. Creating a pipeline
 
@@ -27,6 +31,10 @@ How many records did we load?
 - 3,203,766
 - 3,403,766
 - 3,603,766
+
+answer: 3,403,766
+
+![alt text](screenshots/mod03-q3-screen.png)
 
 (Include a print statement in your code)
 
@@ -62,6 +70,9 @@ What's the size of the result?
 - 3,316,216 
 - 3,503,766
 
+answer: 3,316,216
+![alt text](screenshots/mod03-q4-screen.png)
+
 ## Question 5. Train a model
 
 We will now train a linear regression model using the same code as in homework 1.
@@ -81,6 +92,10 @@ Hint: print the `intercept_` field in the code block
 - 27.77
 - 31.77
 
+answer: 24.77
+
+![alt text](screenshots/mod03-q5-screen.png)
+
 ## Question 6. Register the model 
 
 The model is trained, so let's save it with MLFlow.
@@ -92,6 +107,10 @@ Find the logged model, and find MLModel file. What's the size of the model? (`mo
 * 4,534
 * 1,534
 
+answer: 14,534 
+mine: 12.65 KB ≈ 12 954 bytes
+
+![alt text](screenshots/mod03-q6-screen.png)
 
 ## Submit the results
 
