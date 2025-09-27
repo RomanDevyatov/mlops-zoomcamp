@@ -21,12 +21,12 @@ def load_pickle(filename: str):
 def run_train(data_path: str):
     mlflow.set_experiment("my-hw-experiment")
     
-    mlflow.autolog()
-    
-    X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
-    X_val, y_val = load_pickle(os.path.join(data_path, "val.pkl"))
+    mlflow.autolog()    
     
     with mlflow.start_run():
+        X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
+        X_val, y_val = load_pickle(os.path.join(data_path, "val.pkl"))
+    
         rf = RandomForestRegressor(max_depth=10, random_state=0)
         rf.fit(X_train, y_train)
         y_pred = rf.predict(X_val)
@@ -41,5 +41,4 @@ def run_train(data_path: str):
 if __name__ == '__main__':
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
     mlflow.set_tracking_uri("sqlite:///mlflow.db")
-    mlflow.set_experiment("homework-taxi-experiment")
     run_train()

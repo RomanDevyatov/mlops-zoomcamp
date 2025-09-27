@@ -44,7 +44,7 @@ def createX(df, dv=None):
     return X, dv
 
 def train_model(X_train, y_train, X_val, y_val, dv):    
-    with mlflow.start_run():
+    with mlflow.start_run() as run:
         train = xgb.DMatrix(X_train, label=y_train)
         valid = xgb.DMatrix(X_val, label=y_val)
 
@@ -77,6 +77,8 @@ def train_model(X_train, y_train, X_val, y_val, dv):
         mlflow.log_artifact("models/preprocessor.b", artifact_path="preprocessor")
 
         mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
+        
+        return run.info.run_id
 
 
 def run(year, month):
@@ -94,12 +96,21 @@ def run(year, month):
     y_train = df_train[target].values
     y_val = df_val[target].values
     
-    train_model(X_train, y_train, X_val, y_val, dv)
+    run_id = train_model(X_train, y_train, X_val, y_val, dv)
+    print(f"MLflow run_id: {run_id}")
+    
+    return run_id
+
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser()
+    
+    parser = argparse.ArgumentParser(description="Train a duration prediction model")
     parser.add_argument("--year", type=int, default=2021)
     parser.add_argument("--month", type=int, default=1)
     args = parser.parse_args()
-    run(args.year, args.month)
+    
+    run_id = run(args.year, args.month)
+    
+    with open(models_folder / "last_run_id.txt", "w") as f:
+        f.write(run_id)
