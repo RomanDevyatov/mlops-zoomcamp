@@ -14,7 +14,9 @@ Once you installed the package, run the command `mlflow --version` and check the
 
 What's the version that you have?
 
+<b>version 3.2.0
 
+![alt text](screenshots/2q1-screen.png)
 
 ## Q2. Download and preprocess the data
 
@@ -42,9 +44,12 @@ How many files were saved to `OUTPUT_FOLDER`?
 
 * 1
 * 3
-* 4 this
+* > 4
 * 7
 
+<b>answer: 4
+
+![alt text](screenshots/2q2-screen.png)
 
 ## Q3. Train a model with autolog
 
@@ -66,11 +71,14 @@ Tip 2: don't modify the hyperparameters of the model to make sure that the train
 
 What is the value of the `min_samples_split` parameter:
 
-* 2 this
+* > 2
 * 4
 * 8
 * 10
 
+<b>answer: 2
+
+![alt text](screenshots/2q3-screen.png)
 
 ## Q4. Launch the tracking server locally
 
@@ -85,11 +93,14 @@ You should keep the tracking server running to work on the next two exercises th
 
 In addition to `backend-store-uri`, what else do you need to pass to properly configure the server?
 
-* `default-artifact-root` this
+* > `default-artifact-root`
 * `serve-artifacts`
 * `artifacts-only`
 * `artifacts-destination`
 
+<b>answer: default-artifact-root
+
+![alt text](screenshots/2q4-screen.png)
 
 ## Q5. Tune model hyperparameters
 
@@ -111,9 +122,12 @@ What's the best validation RMSE that you got?
 
 * 4.817
 * 5.335 
-* 5.818 this
+* 5.818
 * 6.336
 
+<b>answer: 5.491
+
+![alt text](screenshots/2q5-screen.png)
 
 ## Q6. Promote the best model to the model registry
 
@@ -131,9 +145,12 @@ What is the test RMSE of the best model?
 
 * 5.060
 * 5.567
-* 6.061 this
+* > 6.061
 * 6.568
 
+<b>answer: 6.06
+
+![alt text](screenshots/2q6-screen.png)
 
 ## Submit the results
 

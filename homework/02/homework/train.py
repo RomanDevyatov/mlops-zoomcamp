@@ -40,5 +40,4 @@ def run_train(data_path: str):
 
 if __name__ == '__main__':
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     run_train()

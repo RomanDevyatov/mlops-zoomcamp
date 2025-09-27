@@ -29,7 +29,7 @@ How many records did we load?
 
 - 3,003,766
 - 3,203,766
-- 3,403,766
+->  3,403,766
 - 3,603,766
 
 answer: 3,403,766
@@ -67,7 +67,7 @@ What's the size of the result?
 
 - 2,903,766
 - 3,103,766
-- 3,316,216 
+- > 3,316,216 
 - 3,503,766
 
 answer: 3,316,216
@@ -88,7 +88,7 @@ What's the intercept of the model?
 Hint: print the `intercept_` field in the code block
 
 - 21.77
-- 24.77
+- > 24.77
 - 27.77
 - 31.77
 
@@ -102,7 +102,7 @@ The model is trained, so let's save it with MLFlow.
 
 Find the logged model, and find MLModel file. What's the size of the model? (`model_size_bytes` field):
 
-* 14,534
+* > 14,534
 * 9,534
 * 4,534
 * 1,534
