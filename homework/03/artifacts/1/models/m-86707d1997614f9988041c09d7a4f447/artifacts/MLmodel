@@ -1,0 +1,22 @@
+artifact_path: /workspaces/mlops-zoomcamp/homework/03/artifacts/1/models/m-86707d1997614f9988041c09d7a4f447/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.4.0
+model_id: m-86707d1997614f9988041c09d7a4f447
+model_size_bytes: 4428
+model_uuid: m-86707d1997614f9988041c09d7a4f447
+prompts: null
+run_id: abeefd14372e473b9c6ec890fb2ab402
+utc_time_created: '2025-09-27 17:18:50.703869'
