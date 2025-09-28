@@ -43,7 +43,9 @@ What is the maximum value of metric `quantile = 0.5` on the `"fare_amount"` colu
 * 14.8
 
 <b>answer: 14.2
+
 ![alt text](screenshots/5q3-screen.png)
+
 ![alt text](screenshots/5q3-screen2.png)
 
 ## Q4. Dashboard
