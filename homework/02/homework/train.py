@@ -7,6 +7,13 @@ from sklearn.metrics import root_mean_squared_error
 
 import mlflow
 
+
+
+
+mlflow.set_experiment("random-forest-hyperopt")
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+
+
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
         return pickle.load(f_in)
@@ -39,5 +46,4 @@ def run_train(data_path: str):
 
 
 if __name__ == '__main__':
-    mlflow.set_tracking_uri("http://127.0.0.1:5000")
     run_train()
