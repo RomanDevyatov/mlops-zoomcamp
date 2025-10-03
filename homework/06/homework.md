@@ -127,19 +127,24 @@ With AWS CLI, this is how we create a bucket:
 aws s3 mb s3://nyc-duration
 ```
 
+![6q4-screen1.png](screenshots/6q4-screen1.png)
+
 Then we need to check that the bucket was successfully created. With AWS, this is how we typically do it:
 
 ```bash
 aws s3 ls
 ```
 
+![6q4-screen2.png](screenshots/6q4-screen2.png)
+
 In both cases we should adjust commands for localstack. What option do we need to use for such purposes?
 
 * `--backend-store-uri`
 * `--profile`
-* `--endpoint-url`
+* > `--endpoint-url`
 * `--version`
 
+<b>Answer: --endpoint-url
 
 ## Make input and output paths configurable
 
@@ -154,6 +159,8 @@ variables. Let's do that:
 export INPUT_FILE_PATTERN="s3://nyc-duration/in/{year:04d}-{month:02d}.parquet"
 export OUTPUT_FILE_PATTERN="s3://nyc-duration/out/{year:04d}-{month:02d}.parquet"
 ```
+
+![6q4-screen3.png](screenshots/6q4-screen3.png)
 
 And this is how we can read them:
 
@@ -201,6 +208,7 @@ Let's modify our `read_data` function:
 - check if `S3_ENDPOINT_URL` is set, and if it is, use it for reading
 - otherwise use the usual way
 
+![6q4-screen4.png](screenshots/6q4-screen4.png)
 
 ## Q5. Creating test data
 
@@ -229,10 +237,15 @@ df_input.to_parquet(
 
 What's the size of the file?
 
-* 3620
+* > 3620
 * 23620
 * 43620
 * 63620
+
+<b>Answer: 3620
+
+I have got 3215
+![6q5-screen2.png](screenshots/6q5-screen2.png)
 
 Note: it's important to use the code from the snippet for saving
 the file. Otherwise the size may be different depending on the OS,
@@ -261,10 +274,12 @@ verify the result is correct.
 What's the sum of predicted durations for the test dataframe?
 
 * 13.08
-* 36.28
+* > 36.28
 * 69.28
 * 81.08
 
+<b>Answer: 36.28
+![6q6-screen1.png](screenshots/6q6-screen1.png)
 
 ## Running the test (ungraded)
 

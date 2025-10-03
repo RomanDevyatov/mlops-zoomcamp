@@ -1,0 +1,18 @@
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=us-east-1
+      - DATA_DIR=/localstack_data
+      - S3_ENDPOINT_URL=http://localhost:4566
+      - INPUT_FILE_PATTERN=s3://nyc-duration/in/{year:04d}-{month:02d}.parquet
+      - OUTPUT_FILE_PATTERN=s3://nyc-duration/out/{year:04d}-{month:02d}.parquet
+    volumes:
+      - localstack_data:/localstack_data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  localstack_data:
