@@ -245,6 +245,7 @@ What's the size of the file?
 <b>Answer: 3620
 
 I have got 3215
+
 ![6q5-screen2.png](screenshots/6q5-screen2.png)
 
 Note: it's important to use the code from the snippet for saving
